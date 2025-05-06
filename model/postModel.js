@@ -30,10 +30,15 @@ const postSchema = new mongoose.Schema(
       trim: true
     },
     author: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'User',
+      type: String,
+      // ref: 'User',
       required: [true, 'A post must have an author']
     }
+    // author: {
+    //   type: mongoose.Schema.Types.ObjectId,
+    //   ref: 'User',
+    //   required: [true, 'A post must have an author']
+    // }
   },
   { timestamps: true }
 );
