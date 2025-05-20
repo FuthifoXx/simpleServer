@@ -16,7 +16,7 @@ const postSchema = new mongoose.Schema(
   {
     title: {
       type: String,
-      required: [true, 'A post must have a name'],
+      required: [true, 'A post must have a title'],
       trim: true
     },
     subtitle: {
@@ -30,8 +30,8 @@ const postSchema = new mongoose.Schema(
       trim: true
     },
     author: {
-      type: String,
-      // ref: 'User',
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User',
       required: [true, 'A post must have an author']
     }
     // author: {

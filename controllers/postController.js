@@ -2,7 +2,7 @@ const Post = require('../model/postModel');
 
 exports.getAllPosts = async (req, res) => {
   try {
-    const posts = await Post.find();
+    const posts = await Post.find().populate('author', 'name email');
     res.status(200).json({
       status: 'success',
       results: posts.length,
@@ -47,7 +47,7 @@ exports.createPost = async (req, res) => {
   } catch (error) {
     res.status(400).json({
       status: 'fail',
-      message: 'invalid data senfgfaaet'
+      message: 'invalid data'
     });
   }
 };
